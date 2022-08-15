@@ -1,10 +1,10 @@
 import React from "react";
-import { SafeAreaView, StatusBar, useColorScheme } from "react-native";
+import { SafeAreaView, StatusBar } from "react-native";
+import { colors } from "../theme/colors";
 
 const MyAppContainer = ({ children }) => {
-    const isDarkMode = useColorScheme() === 'dark';
     return <SafeAreaView>
-        <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
+        <StatusBar barStyle={"light-content"} backgroundColor={colors.darkModeBackground}/>
         {children}
     </SafeAreaView>
 }
