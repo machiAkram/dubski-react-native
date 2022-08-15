@@ -1,11 +1,15 @@
 import React from 'react';
 import { MyAppContainer } from './src/containers';
-import { FeedScreen } from './src/screens';
+import { AppNavigator } from './src/navigators';
+import { NavigationContainer } from '@react-navigation/native';
+import { myTheme } from './src/theme/theme';
 
 const App = () => {
-  return <MyAppContainer>
-    <FeedScreen />
-  </MyAppContainer>
+  return <NavigationContainer theme={myTheme}>
+    <MyAppContainer>
+        <AppNavigator />
+    </MyAppContainer>
+  </NavigationContainer>
 }
 
 export default App;
