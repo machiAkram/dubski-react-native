@@ -1,14 +1,14 @@
 import React from 'react';
-import { Post } from './src/components';
 import { MyAppContainer } from './src/containers';
+import { FeedScreen } from './src/screens';
 
 const App = () => {
   return <MyAppContainer>
-    <Post />
+    <FeedScreen />
   </MyAppContainer>
 }
 
-export default App
+export default App;
 // /**
 //  * Sample React Native App
 //  * https://github.com/facebook/react-native
