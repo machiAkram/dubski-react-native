@@ -1,8 +1,10 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { FeedScreen, HomeScreen, ProfileScreen } from '../screens';
+import { HomeScreen, PlayScreen, ProfileScreen } from '../screens';
 import { View, StyleSheet } from 'react-native';
-import Octicons from 'react-native-vector-icons/Octicons';
+import Feather from 'react-native-vector-icons/Feather';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 const Tab = createBottomTabNavigator();
 
@@ -10,30 +12,35 @@ const AppNavigator = () => {
     return (
         <View style={styles.navigator}>
             <Tab.Navigator
-                initialRouteName="Home"
-                backBehavior="initialRoute" >
+                initialRouteName='Home'
+                backBehavior="initialRoute">
                 <Tab.Screen
-                    name='Feed'
-                    component={FeedScreen}
+                    name='Home'
+                    component={HomeScreen}
                     options={{
                         headerShown: false,
                         tabBarIcon: ({ color, size }) => (
-                            <Octicons name="home" color={color} size={size} />
+                            <Feather name="home" color={color} size={size} />
                         ),
                     }}
                 />
                 <Tab.Screen
-                    name="Home"
-                    component={HomeScreen}
+                    name='Play'
+                    component={PlayScreen}
                     options={{
                         tabBarIcon: ({ color, size }) => (
-                            <Octicons name="home" color={color} size={size} />
+                            <Ionicons name="ios-game-controller-outline" color={color} size={size} />
                         ),
                     }}
                 />
                 <Tab.Screen
                     name="Profile"
                     component={ProfileScreen}
+                    options={{
+                        tabBarIcon: ({ color, size }) => (
+                            <FontAwesome name="user-o" color={color} size={size} />
+                        ),
+                    }}
                 />
             </Tab.Navigator>
         </View>

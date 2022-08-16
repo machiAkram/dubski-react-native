@@ -1,9 +1,9 @@
-import FeedScreen from "./FeedScreen";
 import HomeScreen from "./HomeScreen";
+import PlayScreen from "./PlayScreen";
 import ProfileScreen from './ProfileScreen'
 
 export {
-    FeedScreen,
     HomeScreen,
+    PlayScreen,
     ProfileScreen
 }
