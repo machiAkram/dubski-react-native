@@ -3,6 +3,7 @@ import { StyleSheet, View, Pressable, Platform, Dimensions } from "react-native"
 import ReactNativeHapticFeedback from "react-native-haptic-feedback";
 import { colors } from "../theme/colors";
 import Media from "./Media";
+import { useBottomTabBarHeight } from '@react-navigation/bottom-tabs';
 
 const hapticOptions = {
     enableVibrateFallback: false,
@@ -17,13 +18,16 @@ const hapticTriggerType = Platform.select({
 const Post = ({ post }) => {
     const [isPunchlined, setIsPunchlined] = useState(false);
 
+    const tabBarHeight = useBottomTabBarHeight();
+
+
     const handlePostPress = () => {
         ReactNativeHapticFeedback.trigger(hapticTriggerType, hapticOptions)
         setIsPunchlined(!isPunchlined);
     }
 
     return <Pressable onLongPress={handlePostPress} delayLongPress={200}>
-        <View style={styles.postContainer}>
+        <View style={[styles.postContainer, {height: Dimensions.get('window').height - tabBarHeight}]}>
             <Media
                 type={post.setupType}
                 data={post.setupData}
@@ -44,7 +48,6 @@ const Post = ({ post }) => {
 const styles = StyleSheet.create({
     postContainer: {
         width: '100%',
-        height: Dimensions.get('window').height - 50,
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: colors.darkModeBackground

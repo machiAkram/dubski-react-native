@@ -13,10 +13,7 @@ const AppNavigator = () => {
         <View style={styles.navigator}>
             <Tab.Navigator
                 initialRouteName='Home'
-                backBehavior="initialRoute"
-                screenOptions={{
-                    tabBarStyle: {height: 50}
-                }}>
+                backBehavior="initialRoute">
                 <Tab.Screen
                     name='Home'
                     component={HomeScreen}

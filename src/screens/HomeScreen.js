@@ -2,14 +2,17 @@ import React from "react";
 import { Post } from "../components";
 import { posts } from "../assets/dummyPosts";
 import { FlatList, View, Dimensions, StyleSheet } from "react-native";
+import { useBottomTabBarHeight } from '@react-navigation/bottom-tabs';
 
 const HomeScreen = () => {
+    const tabBarHeight = useBottomTabBarHeight();
+
     return <View style={styles.feedContainer}>
         <FlatList
             data={posts}
             renderItem={({ item }) => <Post post={item}/>}
             showsVerticalScrollIndicator={false}
-            snapToInterval={Dimensions.get('window').height -50}
+            snapToInterval={Dimensions.get('window').height - tabBarHeight}
             decelerationRate={'fast'}
             disableIntervalMomentum
         />
