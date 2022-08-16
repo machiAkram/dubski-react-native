@@ -9,7 +9,7 @@ const HomeScreen = () => {
             data={posts}
             renderItem={({ item }) => <Post post={item}/>}
             showsVerticalScrollIndicator={false}
-            snapToInterval={Dimensions.get('window').height}
+            snapToInterval={Dimensions.get('window').height -50}
             decelerationRate={'fast'}
             disableIntervalMomentum
         />

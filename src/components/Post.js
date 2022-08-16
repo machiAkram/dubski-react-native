@@ -44,7 +44,7 @@ const Post = ({ post }) => {
 const styles = StyleSheet.create({
     postContainer: {
         width: '100%',
-        height: Dimensions.get('window').height,
+        height: Dimensions.get('window').height - 50,
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: colors.darkModeBackground
