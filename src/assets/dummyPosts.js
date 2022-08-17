@@ -7,6 +7,7 @@ export const posts = [
         punchlineData: 'test text punchline1',
         claps: 420,
         nbComments: 60,
+        nbCollects: 12,
     },
     {
         id: 'p2',
@@ -16,6 +17,7 @@ export const posts = [
         punchlineData: require('../assets/test1-1.jpg'),
         claps: 420,
         nbComments: 60,
+        nbCollects: 12,
     },
     {
         id: 'p3',
@@ -25,6 +27,7 @@ export const posts = [
         punchlineData: require('../assets/testvid.mp4'),
         claps: 420,
         nbComments: 60,
+        nbCollects: 12,
     },
     {
         id: 'p4',
@@ -34,6 +37,7 @@ export const posts = [
         punchlineData: 'test text punchline4',
         claps: 420,
         nbComments: 60,
+        nbCollects: 12,
     },
     {
         id: 'p5',
@@ -43,5 +47,6 @@ export const posts = [
         punchlineData: 'test text punchline5',
         claps: 420,
         nbComments: 60,
+        nbCollects: 12,
     },    
 ];

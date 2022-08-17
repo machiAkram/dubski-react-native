@@ -7,7 +7,6 @@ import { useBottomTabBarHeight } from '@react-navigation/bottom-tabs';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Feather from 'react-native-vector-icons/Feather';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
-import Fontisto from 'react-native-vector-icons/Fontisto';
 
 const hapticOptions = {
     enableVibrateFallback: false,
@@ -22,22 +21,31 @@ const hapticTriggerType = Platform.select({
 const Post = ({ post }) => {
     const [isPunchlined, setIsPunchlined] = useState(false);
     const [isClapped, setIsClapped] = useState(false);
+    const [isCollected, setIsCollected] = useState(false);
     const tabBarHeight = useBottomTabBarHeight();
 
-
-    const handlePostPress = () => {
+    const handlePostLongPress = () => {
         ReactNativeHapticFeedback.trigger(hapticTriggerType, hapticOptions);
         setIsPunchlined(!isPunchlined);
     }
 
-    const onClapPress = () => {
-        setIsClapped(true);
+    const handleCollectPress = () => {
+        setIsCollected(!isCollected);
     }
 
-    const onCommentPress = () => {
+    const handleClapPress = () => {
+        if (!isClapped) setIsClapped(true);
     }
 
-    return <Pressable onLongPress={handlePostPress} delayLongPress={200}>
+    const handleCommentPress = () => {
+
+    }
+
+    const handleMorePress = () => {
+
+    }
+
+    return <Pressable onLongPress={handlePostLongPress} delayLongPress={200}>
         <View style={[styles.postContainer, { height: Dimensions.get('window').height - tabBarHeight }]}>
             <Media
                 type={post.setupType}
@@ -54,29 +62,24 @@ const Post = ({ post }) => {
         </View>
         <View style={[styles.uiContainer, { height: Dimensions.get('window').height - tabBarHeight }]}>
             <View style={styles.rightContainer}>
-                <TouchableOpacity style={styles.iconContainer} onPress={onCommentPress}>
-                    <FontAwesome name='diamond' size={30} color={'white'} />
-                    <Text style={[styles.statsLabel, { fontSize: 12 }]}>Collect</Text>
+                <TouchableOpacity style={styles.iconContainer} onPress={handleCollectPress}>
+                    <FontAwesome style={styles.shadow} name='diamond' size={30} color={isCollected ? colors.blue : colors.offWhite} />
+                    <Text style={[styles.statsLabel, styles.shadow, { color: isCollected ? colors.blue : colors.offWhite }]}>{post.nbCollects}</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={styles.iconContainer} onPress={onClapPress}>
-                    <MaterialCommunityIcons name='hand-clap' size={40} color={isClapped ? colors.primaryRed : 'white'} />
-                    <Text style={[styles.statsLabel, { color: isClapped ? colors.primaryRed : 'white' }]}>{post.claps}</Text>
+                <TouchableOpacity style={styles.iconContainer} onPress={handleClapPress}>
+                    <MaterialCommunityIcons style={styles.shadow} name='hand-clap' size={35} color={isClapped ? colors.primaryRed : colors.offWhite} />
+                    <Text style={[styles.statsLabel, styles.shadow, { color: isClapped ? colors.primaryRed : colors.offWhite }]}>{post.claps}</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={styles.iconContainer} onPress={onCommentPress}>
-                    <FontAwesome name='commenting' size={30} color={'white'} />
-                    <Text style={styles.statsLabel}>{post.nbComments}</Text>
+                <TouchableOpacity style={styles.iconContainer} onPress={handleCommentPress}>
+                    <FontAwesome style={styles.shadow} name='commenting' size={30} color={colors.offWhite} />
+                    <Text style={[styles.statsLabel, styles.shadow]}>{post.nbComments}</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={styles.iconContainer} onPress={onCommentPress}>
-                    <FontAwesome name='share' size={30} color={'white'} />
-                    <Text style={[styles.statsLabel, { fontSize: 12 }]}>Share</Text>
-                </TouchableOpacity>
-
-                <TouchableOpacity style={[styles.iconContainer, { marginBottom: 10 }]} onPress={onCommentPress}>
-                    <Feather name='more-horizontal' size={30} color={'white'} />
-                    <Text style={[styles.statsLabel, { fontSize: 12 }]}>More</Text>
+                <TouchableOpacity style={[styles.iconContainer, { marginBottom: 10 }]} onPress={handleMorePress}>
+                    <Feather style={styles.shadow} name='more-horizontal' size={30} color={colors.offWhite} />
+                    <Text style={[styles.statsLabel, styles.shadow]}>More</Text>
                 </TouchableOpacity>
 
             </View>
@@ -99,19 +102,26 @@ const styles = StyleSheet.create({
     },
     rightContainer: {
         alignSelf: 'flex-end',
-        height: 350,
+        height: 280,
         justifyContent: 'space-between',
         marginRight: 5,
+        marginBottom: 10,
     },
     iconContainer: {
         alignItems: "center",
     },
     statsLabel: {
-        fontSize: 14,
+        fontSize: 12,
         fontWeight: '600',
-        marginTop: 5,
-        color: 'white'
+        marginTop: 3,
+        color: colors.offWhite
     },
+    shadow: {
+        textShadowColor: 'black',
+        textShadowOffset: { width: 0, height: 1 },
+        textShadowRadius: 5,
+        shadowOpacity: 0.5
+    }
 });
 
 export default Post;
