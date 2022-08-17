@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
     },
     text: {
         ...human.bodyWhite,
-        marginHorizontal: "5%",
+        marginHorizontal: "10%",
         textAlign: "center",
     },
     video: {

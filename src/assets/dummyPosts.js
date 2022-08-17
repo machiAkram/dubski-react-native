@@ -4,7 +4,7 @@ export const posts = [
         setupType: 'text',
         setupData: 'test text setup1',
         punchlineType: 'text',
-        punchlineData: 'test text punchline1',
+        punchlineData: 'test text punchline1 test text punchline1 test text punchline1 test text punchline1 test text punchline1 test text punchline1 test text punchline1 test text punchline1 test text punchline1 test text punchline1 test text punchline1 test text punchline1 test text punchline1 test text punchline1 test text punchline1 test text punchline1 test text punchline1 test text punchline1 test text punchline1 test text punchline1 test text punchline1 test text punchline1 test text punchline1 test text punchline1 test text punchline1 test text punchline1 test text punchline1 test text punchline1 test text punchline1 test text punchline1',
         claps: 420,
         nbComments: 60,
         nbCollects: 12,
