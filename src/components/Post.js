@@ -102,7 +102,7 @@ const styles = StyleSheet.create({
     },
     rightContainer: {
         alignSelf: 'flex-end',
-        height: 280,
+        height: 270,
         justifyContent: 'space-between',
         marginRight: 5,
         marginBottom: 10,
