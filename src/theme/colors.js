@@ -3,4 +3,5 @@ export const colors = {
     white: '#FFFFFF',
     darkModeBackground: '#121212',
     primaryRed: '#FD5656',
+    emojiYellow: '#FCEA2B'
 }
