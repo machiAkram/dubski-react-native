@@ -34,7 +34,7 @@ const Post = ({ post }) => {
     }
 
     const handleClapPress = () => {
-        if (!isClapped) setIsClapped(true);
+        setIsClapped(!isClapped);
     }
 
     const handleCommentPress = () => {
@@ -84,8 +84,8 @@ const Post = ({ post }) => {
                 </TouchableOpacity>
 
                 <TouchableOpacity style={styles.iconContainer} onPress={handleClapPress}>
-                    <MaterialCommunityIcons style={[styles.shadow, styles.clapIcon]} name='hand-clap' size={35} color={isClapped ? colors.emojiYellow : colors.offWhite} />
-                    <Text style={[styles.statsLabel, styles.shadow, { color: isClapped ? colors.emojiYellow : colors.offWhite }]}>{post.claps}</Text>
+                    <MaterialCommunityIcons style={[styles.shadow, styles.clapIcon]} name='hand-clap' size={35} color={isClapped ? colors.primaryRed : colors.offWhite} />
+                    <Text style={[styles.statsLabel, styles.shadow, { color: isClapped ? colors.primaryRed : colors.offWhite }]}>{post.claps}</Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity style={styles.iconContainer} onPress={handleCommentPress}>
