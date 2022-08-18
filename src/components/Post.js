@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StyleSheet, View, Pressable, Platform, Dimensions, Text, TouchableOpacity } from "react-native";
+import { StyleSheet, View, Pressable, Platform, Dimensions, Text, TouchableOpacity, Image } from "react-native";
 import ReactNativeHapticFeedback from "react-native-haptic-feedback";
 import { colors } from "../theme/colors";
 import Media from "./Media";
@@ -61,15 +61,31 @@ const Post = ({ post }) => {
             />
         </View>
         <View style={[styles.uiContainer, { height: Dimensions.get('window').height - tabBarHeight }]}>
+
+            <View style={styles.bottomContainer}>
+                <Pressable>
+                    <Image
+                        style={styles.profilePicture}
+                        source={post.user.imageUri}
+                    />
+                </Pressable>
+                <View>
+                    <Pressable>
+                        <Text style={styles.handle}>@{post.user.username}</Text>
+                    </Pressable>
+                    <Text style={styles.hashtags}>#test, #testhashtag</Text>
+                </View>
+            </View>
+
             <View style={styles.rightContainer}>
                 <TouchableOpacity style={styles.iconContainer} onPress={handleCollectPress}>
-                    <FontAwesome style={styles.shadow} name='diamond' size={30} color={isCollected ? colors.blue : colors.offWhite} />
-                    <Text style={[styles.statsLabel, styles.shadow, { color: isCollected ? colors.blue : colors.offWhite }]}>{post.nbCollects}</Text>
+                    <FontAwesome style={styles.shadow} name='diamond' size={30} color={isCollected ? colors.primaryRed : colors.offWhite} />
+                    <Text style={[styles.statsLabel, styles.shadow, { color: isCollected ? colors.primaryRed : colors.offWhite }]}>{post.nbCollects}</Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity style={styles.iconContainer} onPress={handleClapPress}>
-                    <MaterialCommunityIcons style={styles.shadow} name='hand-clap' size={35} color={isClapped ? colors.primaryRed : colors.offWhite} />
-                    <Text style={[styles.statsLabel, styles.shadow, { color: isClapped ? colors.primaryRed : colors.offWhite }]}>{post.claps}</Text>
+                    <MaterialCommunityIcons style={[styles.shadow, styles.clapIcon]} name='hand-clap' size={35} color={isClapped ? colors.emojiYellow : colors.offWhite} />
+                    <Text style={[styles.statsLabel, styles.shadow, { color: isClapped ? colors.emojiYellow : colors.offWhite }]}>{post.claps}</Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity style={styles.iconContainer} onPress={handleCommentPress}>
@@ -81,7 +97,6 @@ const Post = ({ post }) => {
                     <Feather style={styles.shadow} name='more-horizontal' size={30} color={colors.offWhite} />
                     <Text style={[styles.statsLabel, styles.shadow]}>More</Text>
                 </TouchableOpacity>
-
             </View>
         </View>
     </Pressable>
@@ -98,7 +113,8 @@ const styles = StyleSheet.create({
     uiContainer: {
         position: "absolute",
         width: '100%',
-        justifyContent: "flex-end"
+        justifyContent: "space-between",
+        flexDirection: "row",
     },
     rightContainer: {
         alignSelf: 'flex-end',
@@ -121,7 +137,35 @@ const styles = StyleSheet.create({
         textShadowOffset: { width: 0, height: 1 },
         textShadowRadius: 5,
         shadowOpacity: 0.5
-    }
+    },
+    clapIcon: {
+        transform: [{ scaleX: -1 }, { rotate: '48deg' }],
+    },
+    bottomContainer: {
+        alignSelf: "flex-end",
+        marginLeft: 5,
+        marginBottom: 10,
+        flexDirection: 'row'
+    },
+    handle: {
+        color: '#fff',
+        fontSize: 16,
+        fontWeight: '700',
+        marginLeft: 10,
+    },
+    profilePicture: {
+        width: 50,
+        height: 50,
+        borderRadius: 25,
+        borderWidth: 2,
+        borderColor: '#fff',
+    },
+    hashtags: {
+        color: '#fff',
+        fontSize: 16,
+        fontWeight: '300',
+        marginLeft: 10,
+    },
 });
 
 export default Post;

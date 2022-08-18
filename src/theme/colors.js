@@ -3,7 +3,7 @@ export const colors = {
     white: '#FFFFFF',
     darkModeBackground: '#121212',
     primaryRed: '#FD5656',
-    emojiYellow: '#FCEA2B',
+    emojiYellow: '#FFD700',
     offWhite: '#FAF9F6',
     blue: '#2ACAEA'
 }

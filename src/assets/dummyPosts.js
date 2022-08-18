@@ -4,10 +4,14 @@ export const posts = [
         setupType: 'text',
         setupData: 'test text setup1',
         punchlineType: 'text',
-        punchlineData: 'test text punchline1 test text punchline1 test text punchline1 test text punchline1 test text punchline1 test text punchline1 test text punchline1 test text punchline1 test text punchline1 test text punchline1 test text punchline1 test text punchline1 test text punchline1 test text punchline1 test text punchline1 test text punchline1 test text punchline1 test text punchline1 test text punchline1 test text punchline1 test text punchline1 test text punchline1 test text punchline1 test text punchline1 test text punchline1 test text punchline1 test text punchline1 test text punchline1 test text punchline1 test text punchline1',
+        punchlineData: 'wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww',
         claps: 420,
         nbComments: 60,
         nbCollects: 12,
+        user: {
+            username: 'testuser',
+            imageUri: require('../assets/test1-1.jpg')
+        }
     },
     {
         id: 'p2',
@@ -18,6 +22,10 @@ export const posts = [
         claps: 420,
         nbComments: 60,
         nbCollects: 12,
+        user: {
+            username: 'testuser',
+            imageUri: require('../assets/test1-1.jpg'),
+        }
     },
     {
         id: 'p3',
@@ -28,6 +36,10 @@ export const posts = [
         claps: 420,
         nbComments: 60,
         nbCollects: 12,
+        user: {
+            username: 'testuser',
+            imageUri: require('../assets/test1-1.jpg')
+        }
     },
     {
         id: 'p4',
@@ -38,6 +50,10 @@ export const posts = [
         claps: 420,
         nbComments: 60,
         nbCollects: 12,
+        user: {
+            username: 'testuser',
+            imageUri: require('../assets/test1-1.jpg')
+        }
     },
     {
         id: 'p5',
@@ -48,5 +64,9 @@ export const posts = [
         claps: 420,
         nbComments: 60,
         nbCollects: 12,
+        user: {
+            username: 'testuser',
+            imageUri: require('../assets/test1-1.jpg')
+        }
     },    
 ];
