@@ -1,8 +1,7 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { HomeScreen, PlayScreen, ProfileScreen } from '../screens';
+import { CollectScreen, PlayScreen, ProfileScreen } from '../screens';
 import { View, StyleSheet, TouchableOpacity, Text } from 'react-native';
-import Feather from 'react-native-vector-icons/Feather';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { colors } from '../theme/colors';
@@ -14,35 +13,13 @@ const AppNavigator = () => {
     const handleCreatePress = () => {
 
     }
-    
+
     return (
         <View style={styles.navigator}>
             <Tab.Navigator
-                initialRouteName='Home'
+                initialRouteName='Play'
                 backBehavior="initialRoute">
-                <Tab.Screen
-                    name='Home'
-                    component={HomeScreen}
-                    options={{
-                        headerShown: true,
-                        headerTransparent: true,
-                        tabBarIcon: ({ color, size }) => (
-                            <Feather name="home" color={color} size={size} />
-                        ),
-                        headerTitle: 'Posts',
-                        headerTitleAlign: 'center',
-                        headerTitleStyle: styles.shadow,
-                        headerLeft: () => (
-                            <TouchableOpacity
-                                style={styles.createContainer}
-                                onPress={handleCreatePress}
-                            >
-                                <Ionicons style={styles.shadow} name='ios-add' size={30} color={colors.offWhite} />
-                                <Text style={[styles.shadow, { fontSize: 12, color: colors.white }]}>Create</Text>
-                            </TouchableOpacity>
-                        ),
-                    }}
-                />
+
                 <Tab.Screen
                     name='Play'
                     component={PlayScreen}
@@ -53,6 +30,30 @@ const AppNavigator = () => {
                         headerTitleAlign: 'center',
                     }}
                 />
+
+                <Tab.Screen
+                    name='Collect'
+                    component={CollectScreen}
+                    options={{
+                        headerShown: true,
+                        headerTransparent: true,
+                        tabBarIcon: ({ color, size }) => (
+                            <FontAwesome name="diamond" color={color} size={size} />
+                        ),
+                        headerTitle: 'Posts',
+                        headerTitleAlign: 'center',
+                        headerTitleStyle: styles.shadow,
+                        headerLeft: () => (
+                            <TouchableOpacity
+                                style={styles.createContainer}
+                                onPress={handleCreatePress}>
+                                <Ionicons style={styles.shadow} name='ios-add' size={30} color={colors.offWhite} />
+                                <Text style={[styles.shadow, { fontSize: 12, color: colors.white }]}>Create</Text>
+                            </TouchableOpacity>
+                        ),
+                    }}
+                />
+
                 <Tab.Screen
                     name="Profile"
                     component={ProfileScreen}

@@ -4,7 +4,7 @@ import { posts } from "../assets/dummyPosts";
 import { FlatList, View, Dimensions, StyleSheet } from "react-native";
 import { useBottomTabBarHeight } from '@react-navigation/bottom-tabs';
 
-const HomeScreen = () => {
+const CollectScreen = () => {
     const tabBarHeight = useBottomTabBarHeight();
 
     return <View style={styles.feedContainer}>
@@ -26,4 +26,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default HomeScreen;
+export default CollectScreen;
