@@ -1,7 +1,7 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { CollectScreen, PlayScreen, ProfileScreen } from '../screens';
-import { View, StyleSheet, TouchableOpacity, Text } from 'react-native';
+import { View, StyleSheet, TouchableOpacity, Text, Image } from 'react-native';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { colors } from '../theme/colors';
@@ -28,6 +28,7 @@ const AppNavigator = () => {
                             <Ionicons name="ios-game-controller-outline" color={color} size={size} />
                         ),
                         headerTitleAlign: 'center',
+                        headerTitle: () => <Image style={styles.appLogo} source={require('../assets/logo.png')} />
                     }}
                 />
 
@@ -83,6 +84,11 @@ const styles = StyleSheet.create({
     createContainer: {
         alignItems: 'center',
         marginLeft: 10,
+    },
+    appLogo: {
+        height: 33,
+        width: 33,
+        transform: [{rotate: '-45deg'}]
     }
 });
 
