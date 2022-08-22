@@ -66,7 +66,7 @@ const Post = ({ post }) => {
                 <Pressable>
                     <Image
                         style={styles.profilePicture}
-                        source={post.user.imageUri}
+                        source={post.user.profilePic}
                     />
                 </Pressable>
                 <View>

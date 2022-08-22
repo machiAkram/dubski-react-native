@@ -10,7 +10,7 @@ export const posts = [
         nbCollects: 12,
         user: {
             username: 'testuser',
-            imageUri: require('../assets/test1-1.jpg')
+            profilePic: require('../assets/test1-1.jpg')
         }
     },
     {
@@ -24,7 +24,7 @@ export const posts = [
         nbCollects: 12,
         user: {
             username: 'testuser',
-            imageUri: require('../assets/test1-1.jpg'),
+            profilePic: require('../assets/test1-1.jpg'),
         }
     },
     {
@@ -38,7 +38,7 @@ export const posts = [
         nbCollects: 12,
         user: {
             username: 'testuser',
-            imageUri: require('../assets/test1-1.jpg')
+            profilePic: require('../assets/test1-1.jpg')
         }
     },
     {
@@ -52,7 +52,7 @@ export const posts = [
         nbCollects: 12,
         user: {
             username: 'testuser',
-            imageUri: require('../assets/test1-1.jpg')
+            profilePic: require('../assets/test1-1.jpg')
         }
     },
     {
@@ -66,7 +66,7 @@ export const posts = [
         nbCollects: 12,
         user: {
             username: 'testuser',
-            imageUri: require('../assets/test1-1.jpg')
+            profilePic: require('../assets/test1-1.jpg')
         }
     },    
 ];
