@@ -7,5 +7,7 @@ export const myTheme = {
   colors: {
     ...DarkTheme.colors,
     primary: colors.primaryRed,
+    background: colors.darkModeBackground,
+    border: colors.border,
   },
 }
