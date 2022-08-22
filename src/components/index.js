@@ -4,6 +4,7 @@ import OnlineFriends from './OnlineFriends';
 import Room from './Room';
 import GameMode from './GameMode';
 import MyPosts from './MyPosts';
+import Title from './Title';
 
 export {
     Post,
@@ -12,4 +13,5 @@ export {
     Room,
     GameMode,
     MyPosts,
+    Title,
 }

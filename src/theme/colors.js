@@ -5,5 +5,6 @@ export const colors = {
     primaryRed: '#FD5656',
     emojiYellow: '#FFD700',
     offWhite: '#FAF9F6',
-    border: '#404040'
+    border: '#404040',
+    secondary: '#3D3D3D'
 }
