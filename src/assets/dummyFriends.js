@@ -36,3 +36,31 @@ export const friends = [
         active: true,
     },
 ];
+
+export const room = [
+    {
+        id: 'u1',
+        profilePic: require('../assets/test1-1.jpg'),
+        isSpeaking: false,
+    },
+    {
+        id: 'u2',
+        profilePic: require('../assets/test1-1.jpg'),
+        isSpeaking: false,
+    },
+    {
+        id: 'u3',
+        profilePic: require('../assets/test1-1.jpg'),
+        isSpeaking: false,
+    },
+    {
+        id: 'u4',
+        profilePic: require('../assets/test1-1.jpg'),
+        isSpeaking: false,
+    },
+    {
+        id: 'u5',
+        profilePic: require('../assets/test1-1.jpg'),
+        isSpeaking: false,
+    },
+];
