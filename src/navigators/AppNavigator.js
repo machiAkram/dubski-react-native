@@ -28,7 +28,8 @@ const AppNavigator = () => {
                             <Ionicons name="ios-game-controller-outline" color={color} size={size} />
                         ),
                         headerTitleAlign: 'center',
-                        headerTitle: () => <Image style={styles.appLogo} source={require('../assets/logo.png')} />
+                        headerTitle: () => <Image style={styles.appLogo} source={require('../assets/logo.png')} />,
+                        headerStyle: styles.header,
                     }}
                 />
 
@@ -52,6 +53,7 @@ const AppNavigator = () => {
                                 <Text style={[styles.shadow, { fontSize: 12, color: colors.white }]}>Create</Text>
                             </TouchableOpacity>
                         ),
+                        headerStyle: {height: 50}
                     }}
                 />
 
@@ -63,6 +65,7 @@ const AppNavigator = () => {
                             <FontAwesome name="user-o" color={color} size={size} />
                         ),
                         headerTitleAlign: 'center',
+                        headerStyle: styles.header
                     }}
                 />
             </Tab.Navigator>
@@ -89,6 +92,11 @@ const styles = StyleSheet.create({
         height: 33,
         width: 33,
         transform: [{rotate: '-45deg'}]
+    },
+    header: {
+        height: 50,
+        borderBottomColor: colors.secondary,
+        borderBottomWidth: 0.35
     }
 });
 

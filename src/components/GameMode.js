@@ -1,12 +1,20 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import React from 'react';
+import { View, StyleSheet } from 'react-native';
+import { Title } from '../components';
 
 const GameMode = () => {
   return (
-    <View>
-      <Text>GameMode</Text>
+    <View style={styles.container}>
+      <Title>Game Mode</Title>
+
     </View>
   )
 }
 
-export default GameMode
+const styles = StyleSheet.create({
+  container: {
+    marginTop: 20,
+  }
+});
+
+export default GameMode;

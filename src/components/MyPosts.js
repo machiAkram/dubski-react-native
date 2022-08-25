@@ -1,12 +1,20 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import { View, StyleSheet } from 'react-native';
+import React from 'react';
+import { Title } from '../components';
 
 const MyPosts = () => {
   return (
-    <View>
-      <Text>MyPosts</Text>
+    <View style={styles.container}>
+      <Title>My Collection</Title>
+      
     </View>
   )
 }
 
-export default MyPosts
+const styles = StyleSheet.create({
+  container: {
+    marginTop: 20
+  }
+})
+
+export default MyPosts;
