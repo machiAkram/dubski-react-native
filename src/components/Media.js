@@ -5,7 +5,7 @@ import Video from "react-native-video";
 import VisibilitySensor from "@svanboxel/visibility-sensor-react-native";
 
 
-const Media = ({ type, data, isPunchline, isPunchlined }) => {
+const Media = ({ type, data, isPunchline, isPunchlined, preview }) => {
 
     const [paused, setPaused] = useState(true);
     const video = useRef(null);
@@ -43,6 +43,7 @@ const Media = ({ type, data, isPunchline, isPunchlined }) => {
                         source={data}
                         resizeMode='contain'
                         paused={paused}
+                        muted={preview}
                     />
                 </VisibilitySensor> //setup
 

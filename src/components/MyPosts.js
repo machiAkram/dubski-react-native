@@ -12,6 +12,7 @@ const renderPost = ({ item }) => {
         data={item.setupData}
         isPunchline={false}
         isPunchlined={false}
+        preview
       />
     </Pressable>
   )
@@ -32,7 +33,6 @@ const MyPosts = ({ children }) => {
             </View>
           </View>
         }
-        // columnWrapperStyle={{justifyContent: 'flex-start'}}
       />
     </View>
   )
@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
   },
   itemContainer: {
     width: '30%',
-    height: 180,
+    height: 190,
     justifyContent: 'center',
     borderWidth: 1,
     borderColor: colors.secondary,
