@@ -1,15 +1,16 @@
 import React from 'react';
-import { View, StyleSheet, ScrollView } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import { GameMode, MyPosts, OnlineFriends, Room } from '../components';
 
 const PlayScreen = () => {
   return (
-    <ScrollView style={styles.playContainer}>
-      <OnlineFriends />
-      <Room />
-      <GameMode />
-      <MyPosts />
-    </ScrollView>
+    <View style={styles.playContainer}>
+      <MyPosts>
+        <OnlineFriends />
+        <Room />
+        <GameMode />
+      </MyPosts>
+    </View>
   )
 }
 
