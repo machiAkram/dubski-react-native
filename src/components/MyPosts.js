@@ -1,9 +1,8 @@
 import React from 'react';
-import { View, StyleSheet, FlatList, Dimensions, Pressable } from 'react-native';
+import { View, StyleSheet, FlatList, Pressable } from 'react-native';
 import { Title, Media } from '../components';
 import { posts } from '../assets/dummyPosts';
-
-const { width } = Dimensions.get('screen');
+import { colors } from '../theme/colors';
 
 const renderPost = ({ item }) => {
   return (
@@ -33,6 +32,7 @@ const MyPosts = ({ children }) => {
             </View>
           </View>
         }
+        // columnWrapperStyle={{justifyContent: 'flex-start'}}
       />
     </View>
   )
@@ -41,11 +41,18 @@ const MyPosts = ({ children }) => {
 const styles = StyleSheet.create({
   titleContainer: {
     marginTop: 20,
+    marginBottom: 5
   },
   itemContainer: {
-    width: width / 3,
-    height: 200,
+    width: '30%',
+    height: 180,
     justifyContent: 'center',
+    borderWidth: 1,
+    borderColor: colors.secondary,
+    borderRadius: 10,
+    marginHorizontal: '1.5%',
+    marginVertical: 5,
+    overflow: 'hidden',
   },
 })
 
